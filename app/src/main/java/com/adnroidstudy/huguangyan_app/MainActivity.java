@@ -12,13 +12,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.adnroidstudy.huguangyan_app.adapter.BottomCarouselAdapter;
 import com.adnroidstudy.huguangyan_app.adapter.MyPagerAdapter;
+import com.adnroidstudy.huguangyan_app.adapter.TopCarouselAdapter;
 import com.adnroidstudy.huguangyan_app.database.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
@@ -29,6 +35,23 @@ public class MainActivity extends AppCompatActivity {
     private TextView scenicTitleTextView;
     private TextView scenicContentTextView;
     private DatabaseHelper dbHelper;
+    private RecyclerView topRecyclerView;
+    private RecyclerView bottomRecyclerView;
+    private LinearLayoutManager topLinearLayoutManager;
+    private TopCarouselAdapter topAdapter;
+    private int currentTopPosition = 0;
+    private List<Integer> topImageResIds;
+    private Timer topTimer;
+    private final long TOP_DELAY_MS = 500; // 延迟时间
+    private final long TOP_PERIOD_MS = 3000; // 周期时间
+    private LinearLayoutManager bottomLinearLayoutManager;
+    private BottomCarouselAdapter bottomAdapter;
+    private List<Integer> bottomImageResIds;
+    private int currentBottomPosition = 0;
+
+    private Timer bottomTimer;
+    private final long BOTTOM_DELAY_MS = 500; // 延迟时间
+    private final long BOTTOM_PERIOD_MS = 3000; // 周期时间
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +104,77 @@ public class MainActivity extends AppCompatActivity {
 
         cursor.close();
         db.close();
+
+        // 初始化顶部RecyclerView
+        topRecyclerView = findViewById(R.id.topRecyclerView);
+        topLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        topRecyclerView.setLayoutManager(topLinearLayoutManager);
+        topImageResIds = new ArrayList<>();
+        // 添加顶部图片资源ID到列表中
+        topImageResIds.add(R.drawable.carousel_image1);
+        topImageResIds.add(R.drawable.carousel_image2);
+        topAdapter = new TopCarouselAdapter(this, topImageResIds);
+        topRecyclerView.setAdapter(topAdapter);
+        startTopAutoScroll();
+        // 其他代码...
+
+
+        // 初始化底部RecyclerView
+        bottomRecyclerView = findViewById(R.id.bottomRecyclerView);
+        bottomLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        bottomRecyclerView.setLayoutManager(bottomLinearLayoutManager);
+        bottomImageResIds = new ArrayList<>();
+        // 添加底部图片资源ID到列表中
+        bottomImageResIds.add(R.drawable.carousel_image3);
+        bottomImageResIds.add(R.drawable.carousel_image4);
+        bottomAdapter = new BottomCarouselAdapter(this, bottomImageResIds);
+        bottomRecyclerView.setAdapter(bottomAdapter);
+        startBottomAutoScroll();
+    }
+    private void startTopAutoScroll() {
+        final Handler topHandler = new Handler();
+        final Runnable topUpdate = new Runnable() {
+            @Override
+            public void run() {
+                if (currentTopPosition == topImageResIds.size()) {
+                    currentTopPosition = 0;
+                }
+                topRecyclerView.smoothScrollToPosition(currentTopPosition++);
+            }
+        };
+
+        topTimer = new Timer();
+        topTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                topHandler.post(topUpdate);
+            }
+        }, TOP_DELAY_MS, TOP_PERIOD_MS);
+    }
+    private void startBottomAutoScroll() {
+        final Handler bottomHandler = new Handler();
+        final Runnable bottomUpdate = new Runnable() {
+            @Override
+            public void run() {
+                if (currentBottomPosition == bottomImageResIds.size()) {
+                    currentBottomPosition = 0;
+                }
+                bottomRecyclerView.smoothScrollToPosition(currentBottomPosition++);
+            }
+        };
+
+        bottomTimer = new Timer();
+        bottomTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                bottomHandler.post(bottomUpdate);
+            }
+        }, BOTTOM_DELAY_MS, BOTTOM_PERIOD_MS);
     }
     @Override
     protected void onDestroy() {
         super.onDestroy();
         handler.removeCallbacks(runnable); // 移除轮播任务
+        topTimer.cancel();
     }
 }

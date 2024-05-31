@@ -6,7 +6,7 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="220dp"
         android:layout_alignParentTop="true" />
 
     <!-- 导航栏 -->
@@ -24,7 +24,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/navbar_first_button_color"
+            style="@style/MyButtonStyle"
             android:text="首页" />
 
         <!-- 导航按钮2 -->
@@ -58,7 +58,7 @@
     <!-- 景区介绍 -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_below="@id/navbar_layout"
         android:background="@drawable/background_image"
         android:fillViewport="true">
@@ -78,6 +78,12 @@
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
                 android:padding="16dp" />
+            <!-- 图片 -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/border"
+                android:layout_gravity="center" />
 
             <!-- 景区内容 -->
             <TextView
@@ -88,8 +94,76 @@
                 android:textSize="16sp"
                 android:padding="16dp" />
 
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/topRecyclerView"
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="90dp"
+                android:padding="5dp"
+                android:background="@drawable/border_img"
+            />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bottomRecyclerView"
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="90dp"
+                android:padding="5dp"
+                android:background="@drawable/border_img"
+                />
+
         </LinearLayout>
 
     </ScrollView>
+    <!-- 底部footer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginTop="660dp"
+        android:orientation="vertical"
+        android:background="@drawable/footer_bg">
+
+        <!-- 垂直方向的图片 -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/footer1"
+            android:layout_gravity="center_horizontal" />
+
+        <!-- 水平分布的三张图片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="horizontal"
+            android:background="@drawable/footer2">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="150dp"
+                android:textSize="14sp"
+                android:textColor="#9F6009"
+                android:text="@string/footer_content"
+                />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/footer4" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 
 </RelativeLayout>
+
