@@ -11,7 +11,9 @@ public class SynopsisActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_synopsis);
+        
 
         // 找到返回按钮
         ImageView backButton = findViewById(R.id.backButton);

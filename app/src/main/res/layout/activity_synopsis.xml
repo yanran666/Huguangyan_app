@@ -19,10 +19,9 @@
             <!-- 返回键 -->
             <ImageView
                 android:id="@+id/backButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:src="@drawable/ic_back"
-                android:textSize="60dp"
                 android:layout_gravity="center_vertical"/>
 
             <!-- 当前页面标题 -->
@@ -32,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:text="景区简介"
                 android:textColor="#FFFFFF"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"/>
 
@@ -44,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@color/white"
             android:layout_below="@id/toolbar">
 
             <!-- 大标题 -->
@@ -54,7 +54,7 @@
                 android:gravity="center"
                 android:text="湖光岩简介"
                 android:textColor="#9F6009"
-                android:textSize="40sp"
+                android:textSize="35sp"
                 android:padding="16dp"/>
 
             <!-- 图片1 -->
@@ -79,7 +79,7 @@
             <TextView
                 android:id="@+id/description"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="440dp"
                 android:layout_below="@id/image2"
                 android:textSize="16dp"
                 android:textColor="@color/black"
