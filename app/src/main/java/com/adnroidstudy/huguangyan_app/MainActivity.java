@@ -1,10 +1,13 @@
 package com.adnroidstudy.huguangyan_app;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -58,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
+        Button introButton = findViewById(R.id.nav_button2);
+        introButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SynopsisActivity.class);
+                startActivity(intent);
+            }
+        });
 
         viewPager = findViewById(R.id.view_pager);
 
@@ -88,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         ContentValues contentValues = new ContentValues();
         contentValues.put("title", "SCENIC SPOTS\n" +
                 "景区介绍");
-        contentValues.put("content", "          雷琼世界地质公园湛江园区湖光岩风景名胜区位于广东省湛江市"+"区西南部18公里处，总面积为37.1平方公里，是一个以玛珥火山地质地貌为主体，兼有海岸地貌、构造地质地貌等多种地质遗迹，自然生态良好，人文景观丰富的公园。");
+        contentValues.put("content", "\\u3000\\u3000雷琼世界地质公园湛江园区湖光岩风景名胜区位于广东省湛江市"+"区西南部18公里处，总面积为37.1平方公里，是一个以玛珥火山地质地貌为主体，兼有海岸地貌、构造地质地貌等多种地质遗迹，自然生态良好，人文景观丰富的公园。");
 
         db.insert("scenic_spot", null, contentValues);
 

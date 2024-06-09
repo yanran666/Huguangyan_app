@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 顶部导航栏 -->
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/navbar_background_color"
+            android:padding="8dp">
+
+            <!-- 返回键 -->
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_back"
+                android:textSize="60dp"
+                android:layout_gravity="center_vertical"/>
+
+            <!-- 当前页面标题 -->
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="景区简介"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
+
+        <!-- 大标题和图片的父布局 -->
+        <LinearLayout
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/toolbar">
+
+            <!-- 大标题 -->
+            <TextView
+                android:id="@+id/bigTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="湖光岩简介"
+                android:textColor="#9F6009"
+                android:textSize="40sp"
+                android:padding="16dp"/>
+
+            <!-- 图片1 -->
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="300dp"
+                android:layout_height="30dp"
+                android:src="@drawable/border2"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"/>
+
+            <!-- 图片2 -->
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/slider_image1"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image2"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:text="@string/synopsis_description"
+                android:padding="16dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:background="@drawable/footer_bg">
+
+            <!-- 垂直方向的图片 -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/footer1"
+                android:layout_gravity="center_horizontal" />
+
+            <!-- 水平分布的三张图片 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="horizontal"
+                android:background="@drawable/footer2">
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="150dp"
+                    android:textSize="14sp"
+                    android:textColor="#9F6009"
+                    android:text="@string/footer_content"
+                    />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="50dp"
+                    android:src="@drawable/footer4" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
