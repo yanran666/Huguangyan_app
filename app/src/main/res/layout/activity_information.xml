@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 顶部导航栏 -->
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/navbar_background_color"
+            android:layout_alignParentTop="true"
+            android:padding="8dp">
+
+            <!-- 返回键 -->
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_back"
+                android:layout_gravity="center_vertical"/>
+
+            <!-- 当前页面标题 -->
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="景区资讯"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
+
+        <!-- 超链接 -->
+        <LinearLayout
+            android:id="@+id/information"
+            android:layout_width="match_parent"
+            android:layout_height="530dp"
+            android:layout_below="@+id/toolbar"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/link1"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="关于公开选聘2024年-2025年接送职工上下班交通车租赁服务项目代理公司的中标公示"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="8dp"
+                    android:tag="@string/link1"
+                    android:onClick="openWebPage" />
+
+                <TextView
+                    android:id="@+id/date1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2024-06-07"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/link2"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="关于公开选聘2024年-2025年接送职工上下班交通车租赁服务项目代理公司的公告"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="8dp"
+                    android:tag="@string/link2"
+                    android:onClick="openWebPage" />
+
+                <TextView
+                    android:id="@+id/date2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2024-06-06"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/link3"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="关于向社会邀请拍摄景区歌曲《神奇的湖光岩》配套视频的项目合作方的中标公示"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="8dp"
+                    android:tag="@string/link3"
+                    android:onClick="openWebPage" />
+
+                <TextView
+                    android:id="@+id/date3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2024-05-07"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/link4"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="关于向社会邀请拍摄景区歌曲《神奇的湖光岩》配套视频的项目合作方的公告（第二次）"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="8dp"
+                    android:tag="@string/link4"
+                    android:onClick="openWebPage" />
+
+                <TextView
+                    android:id="@+id/date4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2024-04-25"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/link5"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="湛江市湖光岩风景区管理中心歌曲《神奇的湖光岩》配套视频的项目合作方采购项目询价结论"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="8dp"
+                    android:tag="@string/link5"
+                    android:onClick="openWebPage" />
+
+                <TextView
+                    android:id="@+id/date5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2024-04-17"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/link6"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="关于向社会邀请拍摄景区歌曲《神奇的湖光岩》配套视频的项目合作方的公告"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="8dp"
+                    android:tag="@string/link6"
+                    android:onClick="openWebPage" />
+
+                <TextView
+                    android:id="@+id/date6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2024-04-17"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/link7"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="关于公开选聘2024年-2026年接送职工上班交通车租赁服务项目代理公司的中标公示"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="8dp"
+                    android:tag="@string/link7"
+                    android:onClick="openWebPage" />
+
+                <TextView
+                    android:id="@+id/date7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2024-04-11"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- 添加用于加载超链接的WebView -->
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/information"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:background="@drawable/footer_bg">
+
+            <!-- 垂直方向的图片 -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/footer1"
+                android:layout_gravity="center_horizontal" />
+
+            <!-- 水平分布的三张图片 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="horizontal"
+                android:background="@drawable/footer2">
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="150dp"
+                    android:textSize="14sp"
+                    android:textColor="#9F6009"
+                    android:text="@string/footer_content"
+                    />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="50dp"
+                    android:src="@drawable/footer4" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

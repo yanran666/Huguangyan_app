@@ -4,4 +4,16 @@
         斋菜馆：19607597666\n 东门环湖车：13702722479</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="synopsis_description">\u3000\u3000湖光岩景区位于广东省湛江市麻章区湖光镇，是雷琼世界地质公园的核心景区，以第四纪火山喷发而形成的罕见、典型的玛珥火山地质遗迹及其优良的自然生态环境而著称，形成于14-16万年前，主要由双火山口湖与火山岩垣组成，景区总面积4.7平方公里，其中湖面积2.3平方公里。现拥有世界地质公园、国家级风景名胜区、国家地质公园、国家4A级旅游景区、全国青少年科技教育基地、国家自然资源科普基地、广东省中小学生研学实践教育基地、广东省自然教育基地、广东省环境教育基地等品牌称号。\n</string>
+    <string name="link1">https://www.hgytravel.com/html/jingquzixun/2024/0607/265.html</string>
+    <string name="link2">https://www.hgytravel.com/html/jingquzixun/2024/0604/264.html</string>
+    <string name="link3">https://www.hgytravel.com/html/jingquzixun/2024/0507/263.html</string>
+    <string name="link4">https://www.hgytravel.com/html/jingquzixun/2024/0607/262.html</string>
+    <string name="link5">https://www.hgytravel.com/html/jingquzixun/2024/0607/261.html</string>
+    <string name="link6">https://www.hgytravel.com/html/jingquzixun/2024/0607/260.html</string>
+    <string name="link7">https://www.hgytravel.com/html/jingquzixun/2024/0607/259.html</string>
+    <string name="guide1">https://www.hgytravel.com/html/lvyouzhinan/jiaotongzhinan/</string>
+    <string name="guide2">https://www.hgytravel.com/html/lvyouzhinan/zhusuzhinan/</string>
+    <string name="guide3">https://www.hgytravel.com/html/lvyouzhinan/difangtechan/</string>
+    <string name="guide4">https://www.hgytravel.com/html/lvyouzhinan/xianlutuijian/</string>
+
 </resources>

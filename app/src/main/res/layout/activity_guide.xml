@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 顶部导航栏 -->
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/navbar_background_color"
+            android:layout_alignParentTop="true"
+            android:padding="8dp">
+
+            <!-- 返回键 -->
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_back"
+                android:layout_gravity="center_vertical"/>
+
+            <!-- 当前页面标题 -->
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="旅游指南"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
+        <!-- 线性布局 guide -->
+        <LinearLayout
+            android:id="@+id/guide"
+            android:layout_width="match_parent"
+            android:layout_height="530dp"
+            android:orientation="vertical"
+            android:layout_below="@id/toolbar">
+
+            <!-- 很大的图片垂直分布 -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/guide"
+                android:scaleType="fitXY" />
+
+            <!-- 水平分布的四个小图片 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:padding="6dp"
+                    android:onClick="loadLink">
+
+                    <ImageView
+                        android:id="@+id/guide_img1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="@string/guide1"
+                        android:src="@drawable/guide_small1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-70dp"
+                        android:textSize="16dp"
+                        android:textColor="@color/navbar_background_color"
+                        android:text="交通指南" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:padding="6dp"
+                    android:onClick="loadLink">
+
+                    <ImageView
+                        android:id="@+id/guide_img2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="@string/guide2"
+                        android:src="@drawable/guide_small2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-70dp"
+                        android:textSize="16dp"
+                        android:textColor="@color/navbar_background_color"
+                        android:text="住宿指南" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:padding="6dp"
+                    android:onClick="loadLink">
+
+                    <ImageView
+                        android:id="@+id/guide_img3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="@string/guide3"
+                        android:src="@drawable/guide_small3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-70dp"
+                        android:textSize="16dp"
+                        android:textColor="@color/navbar_background_color"
+                        android:text="地方特产" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:padding="6dp"
+                    android:onClick="loadLink">
+
+                    <ImageView
+                        android:id="@+id/guide_img4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="@string/guide4"
+                        android:src="@drawable/guide_small4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-70dp"
+                        android:textSize="16dp"
+                        android:textColor="@color/navbar_background_color"
+                        android:text="线路推荐" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <!-- 添加用于加载超链接的WebView -->
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/guide"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:background="@drawable/footer_bg">
+
+            <!-- 垂直方向的图片 -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/footer1"
+                android:layout_gravity="center_horizontal" />
+
+            <!-- 水平分布的三张图片 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="horizontal"
+                android:background="@drawable/footer2">
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="150dp"
+                    android:textSize="14sp"
+                    android:textColor="#9F6009"
+                    android:text="@string/footer_content"
+                    />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="50dp"
+                    android:src="@drawable/footer4" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

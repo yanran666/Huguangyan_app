@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 style="@style/MyButtonStyle"
-                android:text="景区攻略" />
+                android:text="景区资讯" />
 
             <Button
                 android:id="@+id/nav_button4"

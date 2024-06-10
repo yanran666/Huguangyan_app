@@ -61,11 +61,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
-        Button introButton = findViewById(R.id.nav_button2);
-        introButton.setOnClickListener(new View.OnClickListener() {
+        Button introButton1 = findViewById(R.id.nav_button2);
+        introButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SynopsisActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button introButton3 = findViewById(R.id.nav_button3);
+        introButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InformationActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button introButton4 = findViewById(R.id.nav_button4);
+        introButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GuideActivity.class);
                 startActivity(intent);
             }
         });
